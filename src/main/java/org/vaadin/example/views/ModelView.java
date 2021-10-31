@@ -6,13 +6,11 @@ import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.vaadin.example.forms.ModelForm;
-import org.vaadin.example.models.DAO.ModelDao;
 import org.vaadin.example.models.Model;
 
 public class ModelView extends VerticalLayout {
     private Grid tasks = new Grid(Model.class);
 
-    ModelDao modelDao;
 
     public ModelView(){
         tasks.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS, GridVariant.LUMO_ROW_STRIPES);

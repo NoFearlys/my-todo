@@ -7,12 +7,9 @@ import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import org.vaadin.example.forms.ClientForm;
 import org.vaadin.example.models.Client;
-import org.vaadin.example.models.DAO.ClientDao;
 
 public class ClientsView extends VerticalLayout {
     private Grid tasks = new Grid(Client.class);
-
-    ClientDao clientDao;
 
     public ClientsView(){
         tasks.addThemeVariants(GridVariant.LUMO_NO_BORDER, GridVariant.LUMO_NO_ROW_BORDERS, GridVariant.LUMO_ROW_STRIPES);

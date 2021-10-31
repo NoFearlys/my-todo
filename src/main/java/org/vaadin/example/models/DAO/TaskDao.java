@@ -10,7 +10,7 @@ import org.vaadin.example.models.Task;
 
 import java.util.List;
 
-@Repository
+
 public interface TaskDao extends JpaRepository<Task, Integer> {
 
 

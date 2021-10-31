@@ -9,7 +9,7 @@ import org.vaadin.example.models.Client;
 
 import java.util.List;
 
-@Repository
+
 public interface ClientDao extends JpaRepository<Client, Integer> {
 
 

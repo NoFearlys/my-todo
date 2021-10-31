@@ -17,4 +17,8 @@ public class City {
     int id;
     String name;
 
+    public City(String name){
+        this.name = name;
+    }
+
 }

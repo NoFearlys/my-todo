@@ -7,7 +7,7 @@ import org.vaadin.example.models.Model;
 
 import java.util.List;
 
-@Repository
+
 public interface ModelDao  extends JpaRepository<Model, Integer> {
 
     List<Model> findByVersion(String version);

@@ -6,6 +6,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.tabs.Tab;
 import com.vaadin.flow.component.tabs.Tabs;
 import com.vaadin.flow.router.Route;
+import org.vaadin.example.views.CityView;
 import org.vaadin.example.views.ClientsView;
 import org.vaadin.example.views.ModelView;
 import org.vaadin.example.views.TasksView;
@@ -22,11 +23,6 @@ public class MainView extends VerticalLayout {
 
         Tab tab1 = new Tab("Задачи");
         VerticalLayout page1 = new TasksView();
-        Button addTaskButton = new Button();
-
-
-
-        page1.add( addTaskButton);
 
         Tab tab2 = new Tab("Клиенты");
         VerticalLayout page2 = new ClientsView();
@@ -37,12 +33,17 @@ public class MainView extends VerticalLayout {
         VerticalLayout page3 = new ModelView();
         page3.setVisible(false);
 
+        Tab tab4 = new Tab("Города");
+        VerticalLayout page4 = new CityView();
+        page4.setVisible(false);
+
         Map<Tab, Component> tabsToPages = new HashMap<>();
         tabsToPages.put(tab1, page1);
         tabsToPages.put(tab2, page2);
         tabsToPages.put(tab3, page3);
-        Tabs tabs = new Tabs(tab1, tab2, tab3);
-        VerticalLayout pages = new VerticalLayout(page1, page2, page3);
+        tabsToPages.put(tab4, page4);
+        Tabs tabs = new Tabs(tab1, tab2, tab3, tab4);
+        VerticalLayout pages = new VerticalLayout(page1, page2, page3, page4);
         tabs.setOrientation(Tabs.Orientation.HORIZONTAL);
         tabs.setFlexGrowForEnclosedTabs(100);
         tabs.addSelectedChangeListener(event -> {
