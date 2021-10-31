@@ -1,6 +1,7 @@
 package org.vaadin.example.models;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -9,24 +10,24 @@ import javax.persistence.*;
 @Table(name = "clients")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int clientId;
+    int id;
     @Column(name = "name")
     String name;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "cityId")
     City city;
-    @Column(name = "adress")
+    @Column(name = "address")
     String address;
     @Column(name = "phone")
     String phone;
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "modelId")
     Model model;
-
 
     public Client(String name, City city, String address, String phone, Model model) {
         this.name = name;
@@ -36,51 +37,5 @@ public class Client {
         this.model = model;
     }
 
-    public int getClientId() {
-        return clientId;
-    }
 
-    public void setClientId(int clientId) {
-        this.clientId = clientId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public City getCity() {
-        return city;
-    }
-
-    public void setCity(City city) {
-        this.city = city;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
-    public Model getModel() {
-        return model;
-    }
-
-    public void setModel(Model model) {
-        this.model = model;
-    }
 }

@@ -1,5 +1,8 @@
 package org.vaadin.example.models;
 
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
 public enum Status {
     NOTHING (1, "Пусто"),
     WAITING (2, "Ожидается"),
@@ -11,10 +14,6 @@ public enum Status {
     int id;
     String title;
 
-    Status(int id, String title){
-        this.id=id;
-        this.title = title;
-    }
 
     public int getId() {
         return id;

@@ -12,7 +12,6 @@ import javax.persistence.Persistence;
 @EnableJpaRepositories(basePackages = "org.vaadin.example.models")
 @EnableTransactionManagement
 public class AppJpaConfiguration {
-    @Bean
     public EntityManagerFactory entityManagerFactory() {
         return Persistence.createEntityManagerFactory("MainPersistenceUnit");
     }
